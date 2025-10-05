@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'dart:ffi';
+// 'dart:ffi' is not supported on web; no FFI used here.
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';

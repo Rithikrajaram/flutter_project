@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_clone/application/downloads/downloads_bloc.dart';
 import 'package:netflix_clone/core/colors/colors.dart';
 import 'package:netflix_clone/domain/core/di/injectable.dart';
@@ -51,13 +50,13 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
             appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
-            primarySwatch: Colors.blue,
-            backgroundColor: Colors.black,
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue).copyWith(background: Colors.black),
             scaffoldBackgroundColor: backgrounndColor,
-            fontFamily: GoogleFonts.montserrat().fontFamily,
+            // Use default font family to avoid google_fonts web issues on older SDKs
             textTheme: const TextTheme(
-                bodyText1: TextStyle(color: Colors.white),
-                bodyText2: TextStyle(color: Colors.white))),
+              bodyLarge: TextStyle(color: Colors.white),
+              bodyMedium: TextStyle(color: Colors.white),
+            )),
         home:  const ScreenSplash() ,
       ),
     );
